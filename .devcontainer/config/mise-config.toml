@@ -1,0 +1,13 @@
+[tools]
+java = "21"
+# managed by mise because the devcontainer feature is a slow 32-bit ARM binary version
+starship = "1.27.0"
+"github:karatelabs/karate-cli" = "0.1.9"
+uv = "latest"
+"pypi:graphifyy" = { version = "latest", python = "3.12", extras = "sql" }
+
+[settings]
+idiomatic_version_file_enable_tools = ["java"]
+auto_install = true
+asdf_compat = true
+self_update.auto = true

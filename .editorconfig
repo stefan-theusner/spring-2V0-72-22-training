@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = false
+max_line_length = 120
+tab_width = 4
+
+[*.feature]
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+[*.java]
+# Equivalent to unchecking "Keep when reformatting -> Line breaks"
+ij_java_keep_line_breaks = false
+# Forces IntelliJ to wrap lines that exceed the max_line_length when you reformat
+ij_formatter_wrap_on_typing = true

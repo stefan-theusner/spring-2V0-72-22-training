@@ -1,0 +1,30 @@
+# Ignore local Graphify build state and generated backups.
+# Keep shared outputs tracked: graph.json, graph.html, GRAPH_REPORT.md,
+# .graphify_labels.json, manifest.json and wiki/.
+
+# Dated backups from graph rebuilds
+20??-??-??/
+
+# Local cache and machine-specific paths
+cache/
+.graphify_python
+.graphify_root
+
+# Transient build and query state
+.cloud-cta-shown
+.graphify_analysis.json
+.graphify_build_state.json
+.graphify_partition_cache.json
+.graphify_labels.json.sig
+.graphify_labels.pending.json
+.graphify_ast.json
+.graphify_cached.json
+.graphify_chunk_*.json
+.graphify_detect.json
+.graphify_extract.json
+.graphify_partial.txt
+.graphify_semantic.json
+.graphify_semantic_new.json
+.graphify_uncached.txt
+.needs_update
+cost.json

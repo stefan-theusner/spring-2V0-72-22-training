@@ -1,0 +1,80 @@
+// For format details, see https://containers.dev/implementors/json_reference/
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+    "workspaceFolder": "/home/vscode/${localWorkspaceFolderBasename}",
+    "runArgs": [
+        "--name",
+        "dev-meiyu-${localWorkspaceFolderBasename}",
+        "--add-host=host.docker.internal:host-gateway",
+        // Default directory for `docker exec`
+        "--workdir",
+        "${containerWorkspaceFolder}"
+    ],
+    // Run the container as vscode so `docker exec` defaults to vscode instead of root
+    "containerUser": "vscode",
+    "remoteUser": "vscode",
+    "containerEnv": {
+        "GRADLE_USER_HOME": "${containerWorkspaceFolder}/.gradle",
+        // Claude settings
+        "CLAUDE_CONFIG_DIR": "/home/vscode/.claude",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+        "DISABLE_AUTOUPDATER": "1",
+        // OpenCode settings
+        "OLLAMA_HOST": "http://docker.internal",
+        "OPENCODE_MODEL": "qwen3.5:4b",
+        "OPENCODE_API_BASE": "http://docker.internal/v1"
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": [
+        "bash",
+        ".devcontainer/post-create.sh"
+    ],
+    // Use 'postStartCommand' to run commands every time the container starts.
+    "postStartCommand": ["bash", ".devcontainer/post-start.sh"],
+
+    "features": {
+        "ghcr.io/devcontainers-extra/features/mise:1": {},
+        "ghcr.io/jsburckhardt/devcontainer-features/tmux:2": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/lnav.org:1": {},
+        // claude code
+        "ghcr.io/devcontainers/features/node:latest": {
+            "version": "24.21.0",
+        },
+        // node is required for claude code
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
+        // opencode
+        "ghcr.io/dirien/devcontainer-features/opencode:latest": {},
+        // gradle setup using sdkman
+        "ghcr.io/devcontainers/features/java:latest": {
+            "version": "none",
+            "installGradle": true,
+            "installMaven": true,
+            "gradleVersion": "9.8.2",
+            "mavenVersion": "3.9.16"
+        }
+        // starship is installed via mise (.devcontainer/config/mise.toml)
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [8761, 8888],
+    "appPort": ["8080:8080", "9010:9010"],
+    "portsAttributes": {
+        "8080": {
+            "label": "spring-boot",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-spring-boot-dashboard",
+                "vscjava.vscode-spring-boot-tools"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.formatOnSave": true
+            }
+        }
+    }
+}

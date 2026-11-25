@@ -1,0 +1,712 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1794561993.4305031,
+    "seen": 1794562367.999139,
+    "ast_hash": "0a0ef578e59e2bb38c69f1dcb49a0e1a",
+    "semantic_hash": "0a0ef578e59e2bb38c69f1dcb49a0e1a",
+    "ast_empty": true
+  },
+  ".devcontainer/devcontainer.json": {
+    "mtime": 1795594895.421,
+    "seen": 1795598712.064928,
+    "ast_hash": "d9dc05328447c880e948dbc9259cbe1d",
+    "semantic_hash": ""
+  },
+  ".devcontainer/post-create.sh": {
+    "mtime": 1795440436.0,
+    "seen": 1795524801.9855742,
+    "ast_hash": "5e6b55d922f9e931afc14cacb5789640",
+    "semantic_hash": ""
+  },
+  ".devcontainer/post-start.sh": {
+    "mtime": 1794296958.0,
+    "seen": 1794562367.999143,
+    "ast_hash": "b33be85ab01aad06b0854c8437e96ca8",
+    "semantic_hash": "b33be85ab01aad06b0854c8437e96ca8"
+  },
+  ".devcontainer/start-relay.sh": {
+    "mtime": 1795106262.953,
+    "seen": 1795164318.964378,
+    "ast_hash": "6479cc790dd58ba1ee36e7a8d7ef1e50",
+    "semantic_hash": ""
+  },
+  "build.gradle": {
+    "mtime": 1795190923.0,
+    "seen": 1795524801.9855769,
+    "ast_hash": "ce254045a219b5ea1c8618dd12c3774f",
+    "semantic_hash": ""
+  },
+  "docker-compose.yaml": {
+    "mtime": 1795100146.3535457,
+    "seen": 1795164318.964396,
+    "ast_hash": "478a4858d1792a73bbc961a721655f70",
+    "semantic_hash": ""
+  },
+  "gradlew": {
+    "mtime": 1793633431.0,
+    "seen": 1794562367.999145,
+    "ast_hash": "a43be8432bac3ffd05b3769aa42fe996",
+    "semantic_hash": "a43be8432bac3ffd05b3769aa42fe996"
+  },
+  "iac/Pulumi.dev.yaml": {
+    "mtime": 1795190447.0350072,
+    "seen": 1795524801.9855793,
+    "ast_hash": "4ca6bad5bce564084de5147b6f0f9e83",
+    "semantic_hash": ""
+  },
+  "iac/Pulumi.yaml": {
+    "mtime": 1794232523.9909396,
+    "seen": 1794562367.999146,
+    "ast_hash": "5921d9d2281b519919be9907e6002fc7",
+    "semantic_hash": "5921d9d2281b519919be9907e6002fc7"
+  },
+  "iac/index.ts": {
+    "mtime": 1795190414.5879958,
+    "seen": 1795524801.9855819,
+    "ast_hash": "a2a3f750e7c8b95889dcae3b36c1bd38",
+    "semantic_hash": ""
+  },
+  "iac/login-test.js": {
+    "mtime": 1794574675.0,
+    "seen": 1794575610.6708732,
+    "ast_hash": "a5097bc3a89c90ae30ed724728eca4bb",
+    "semantic_hash": "a5097bc3a89c90ae30ed724728eca4bb"
+  },
+  "iac/package.json": {
+    "mtime": 1795190403.8414068,
+    "seen": 1795524801.9855828,
+    "ast_hash": "42a8c7d8ee3275474fb266d9e90e4af3",
+    "semantic_hash": ""
+  },
+  "iac/tsconfig.json": {
+    "mtime": 1794232511.8353834,
+    "seen": 1794562367.999149,
+    "ast_hash": "a828b1c59cd1a06113f70da8c24a09d8",
+    "semantic_hash": "a828b1c59cd1a06113f70da8c24a09d8"
+  },
+  "iac/users.json": {
+    "mtime": 1794495177.0,
+    "seen": 1794562367.999149,
+    "ast_hash": "6b1f688eef78212b17bfcbba64466844",
+    "semantic_hash": "6b1f688eef78212b17bfcbba64466844",
+    "ast_empty": true
+  },
+  "settings.gradle": {
+    "mtime": 1793633431.0,
+    "seen": 1794562367.99915,
+    "ast_hash": "804a0a5376321e3af0d5b6f07a68ab9b",
+    "semantic_hash": "804a0a5376321e3af0d5b6f07a68ab9b"
+  },
+  "src/main/java/eu/meiyu/training/TrainingApplication.java": {
+    "mtime": 1795184540.0,
+    "seen": 1795184924.91275,
+    "ast_hash": "359640b594cadf7c4cfed53dfe268454",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/TrainingConfig.java": {
+    "mtime": 1794478192.0,
+    "seen": 1794562367.999151,
+    "ast_hash": "046987b95e3e66048e74275362aaf074",
+    "semantic_hash": "046987b95e3e66048e74275362aaf074"
+  },
+  "src/main/java/eu/meiyu/training/actuator/ExecutionPerService.java": {
+    "mtime": 1793803344.0,
+    "seen": 1794562367.9991522,
+    "ast_hash": "59f404452d5a37bce21dc80dd75386c4",
+    "semantic_hash": "59f404452d5a37bce21dc80dd75386c4"
+  },
+  "src/main/java/eu/meiyu/training/actuator/PerformanceHealthIndicator.java": {
+    "mtime": 1793802298.0,
+    "seen": 1794562367.9991522,
+    "ast_hash": "f60aea07efa20495fec524692c73073c",
+    "semantic_hash": "f60aea07efa20495fec524692c73073c"
+  },
+  "src/main/java/eu/meiyu/training/actuator/PerformanceTracker.java": {
+    "mtime": 1793803344.0,
+    "seen": 1794562367.999153,
+    "ast_hash": "6d20ae8c74afa850eb64d5694b74b250",
+    "semantic_hash": "6d20ae8c74afa850eb64d5694b74b250"
+  },
+  "src/main/java/eu/meiyu/training/aop/LoggingAspect.java": {
+    "mtime": 1793789085.0,
+    "seen": 1794562367.999153,
+    "ast_hash": "b1bdd05671460460f7e4e3c1907a05e1",
+    "semantic_hash": "b1bdd05671460460f7e4e3c1907a05e1"
+  },
+  "src/main/java/eu/meiyu/training/aop/PointCuts.java": {
+    "mtime": 1793787118.0,
+    "seen": 1794562367.9991539,
+    "ast_hash": "932c6e762963182e9e1b13d031cbfb19",
+    "semantic_hash": "932c6e762963182e9e1b13d031cbfb19"
+  },
+  "src/main/java/eu/meiyu/training/aop/TimingAspect.java": {
+    "mtime": 1793802215.0,
+    "seen": 1794562367.999155,
+    "ast_hash": "37e9409af04b22a0ecb164aa2ca8fb08",
+    "semantic_hash": "37e9409af04b22a0ecb164aa2ca8fb08"
+  },
+  "src/main/java/eu/meiyu/training/config/ActuatorConfig.java": {
+    "mtime": 1794917124.0,
+    "seen": 1794996938.537651,
+    "ast_hash": "b2c1863aa3481df5ec9879804aa27ae7",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/config/AppConfigProperties.java": {
+    "mtime": 1795185328.0,
+    "seen": 1795185827.1134262,
+    "ast_hash": "665eba380e4110e88988e6164bd78451",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/config/RepositoryConfig.java": {
+    "mtime": 1794566794.0,
+    "seen": 1794575610.671547,
+    "ast_hash": "32fa9c2f9a11dee4112e21a59653b8a3",
+    "semantic_hash": "32fa9c2f9a11dee4112e21a59653b8a3"
+  },
+  "src/main/java/eu/meiyu/training/config/security/AuthorizationServerConfig.java": {
+    "mtime": 1794575503.0,
+    "seen": 1794575610.6715782,
+    "ast_hash": "68123393c1c30d9350b0dfb8cc786458",
+    "semantic_hash": "68123393c1c30d9350b0dfb8cc786458"
+  },
+  "src/main/java/eu/meiyu/training/config/security/RestSecurityConfig.java": {
+    "mtime": 1795528029.269803,
+    "seen": 1795528115.0417278,
+    "ast_hash": "a2d676471cdf6acfb30475eeb5eb46b2",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/controller/OAuth2Controller.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.96519,
+    "ast_hash": "8c1769296747c69ab111737549c74311",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/WithoutOAuth2Application.java": {
+    "mtime": 1794575388.0,
+    "seen": 1794575610.672457,
+    "ast_hash": "af1b23e24ac73f5c2cea5e0c93ad8590",
+    "semantic_hash": "af1b23e24ac73f5c2cea5e0c93ad8590"
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1794561993.4300613,
+    "seen": 1794562367.999166,
+    "ast_hash": "9b31786b637be3c13978bec4c2330752",
+    "semantic_hash": "9b31786b637be3c13978bec4c2330752"
+  },
+  "CLAUDE.md": {
+    "mtime": 1795108093.58797,
+    "seen": 1795164318.965454,
+    "ast_hash": "15283ae99416af5bbd22c734a7c90832",
+    "semantic_hash": ""
+  },
+  "hello-floci.txt": {
+    "mtime": 1794231578.9885533,
+    "seen": 1794562367.999167,
+    "ast_hash": "3dfc07210026af0544da9224244d87cf",
+    "semantic_hash": "3dfc07210026af0544da9224244d87cf"
+  },
+  "iac/README.md": {
+    "mtime": 1795598702.377893,
+    "seen": 1795598712.0649824,
+    "ast_hash": "8411d4c1c825e0b7df58f8ce85286b48",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/security/AppClaims.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672081,
+    "ast_hash": "22fb4c2cb498eafe41144e740c1d50b0",
+    "semantic_hash": "22fb4c2cb498eafe41144e740c1d50b0"
+  },
+  "src/main/java/eu/meiyu/training/security/AppJwtAuthenticationToken.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672105,
+    "ast_hash": "36ee0478befb79ca7c04c9e844566a17",
+    "semantic_hash": "36ee0478befb79ca7c04c9e844566a17"
+  },
+  "src/main/java/eu/meiyu/training/security/IdpLogoutSuccessHandler.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672129,
+    "ast_hash": "8be5f36756d0b01dab5b80c25d9f03cb",
+    "semantic_hash": "8be5f36756d0b01dab5b80c25d9f03cb"
+  },
+  "src/main/java/eu/meiyu/training/security/principal/AppAuthorities.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672155,
+    "ast_hash": "5e7ad37f3338ddb82516ec4b26383077",
+    "semantic_hash": "5e7ad37f3338ddb82516ec4b26383077"
+  },
+  "src/main/java/eu/meiyu/training/security/principal/AppPrincipal.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.6721869,
+    "ast_hash": "e0355831dde3406ea28b2e0fc8e3ecd7",
+    "semantic_hash": "e0355831dde3406ea28b2e0fc8e3ecd7"
+  },
+  "src/main/java/eu/meiyu/training/security/principal/CognitoOidcPrincipal.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672226,
+    "ast_hash": "807f46778720715a19723002b542a202",
+    "semantic_hash": "807f46778720715a19723002b542a202"
+  },
+  "src/main/java/eu/meiyu/training/security/principal/JwtAppPrincipal.java": {
+    "mtime": 1794575203.0,
+    "seen": 1794575610.672262,
+    "ast_hash": "c62e4e26842a051df15f2abb5b65419c",
+    "semantic_hash": "c62e4e26842a051df15f2abb5b65419c"
+  },
+  "observability/grafana/dashboards/http-metrics-otel.json": {
+    "mtime": 1794912180.6890292,
+    "seen": 1794912354.0010931,
+    "ast_hash": "85227110b3ccaa7ecd8d6e3fe1ed0bdf",
+    "semantic_hash": ""
+  },
+  "observability/grafana/provisioning/dashboards/dashboards.yaml": {
+    "mtime": 1794912168.5633364,
+    "seen": 1794912354.0010931,
+    "ast_hash": "0996289adb590c731aa9d2fd77c8370b",
+    "semantic_hash": ""
+  },
+  "observability/grafana/provisioning/datasources/datasources.yaml": {
+    "mtime": 1794912168.560514,
+    "seen": 1794912354.0010939,
+    "ast_hash": "a7eadef82073f1963945eb9e0969dd28",
+    "semantic_hash": ""
+  },
+  "observability/otel-collector.yaml": {
+    "mtime": 1794912168.551191,
+    "seen": 1794912354.0010948,
+    "ast_hash": "ab319e2b4cccd500184de304c349589e",
+    "semantic_hash": ""
+  },
+  "observability/prometheus.yaml": {
+    "mtime": 1794912168.5548627,
+    "seen": 1794912354.0010948,
+    "ast_hash": "21f220293a09273e43834e87954be290",
+    "semantic_hash": ""
+  },
+  "observability/tempo.yaml": {
+    "mtime": 1794912168.5575995,
+    "seen": 1794912354.001096,
+    "ast_hash": "f2de6ecebbcf9526359ae51786e89afd",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/aop/TrackMetricAspect.java": {
+    "mtime": 1794991174.0,
+    "seen": 1794996938.537643,
+    "ast_hash": "bb948cbaa8c95ad7d791e69df22b1d57",
+    "semantic_hash": ""
+  },
+  "observability/grafana/dashboards/custom-metrics.json": {
+    "mtime": 1794917434.587994,
+    "seen": 1794996938.537631,
+    "ast_hash": "d00e1bf4d2a95e38e5bca21fc133f96b",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/aop/annotation/MetricType.java": {
+    "mtime": 1794991174.0,
+    "seen": 1794996938.537643,
+    "ast_hash": "b84ed75f5c4791b9b99bbae6b1838b97",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/aop/annotation/TrackMetric.java": {
+    "mtime": 1794991174.0,
+    "seen": 1794996938.5376441,
+    "ast_hash": "4ea82f258d8d998984349a584e49d783",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/aop/annotation/TrackMetricService.java": {
+    "mtime": 1794991174.0,
+    "seen": 1794996938.537645,
+    "ast_hash": "de9c0be2af2f874597b064cf5e4a555c",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/aop/annotation/TrackMetrics.java": {
+    "mtime": 1794991174.0,
+    "seen": 1794996938.537645,
+    "ast_hash": "b5000018f43955fa12d3ad6e2de1a799",
+    "semantic_hash": ""
+  },
+  "karate/env.yaml": {
+    "mtime": 1795018882.0,
+    "seen": 1795086674.5151098,
+    "ast_hash": "f70646f38c22868ce5e95e7d9de02895",
+    "semantic_hash": ""
+  },
+  "karate/karate-config.js": {
+    "mtime": 1795017275.0,
+    "seen": 1795086674.515111,
+    "ast_hash": "64cbb54b53f0a676a7c2915d97829b37",
+    "semantic_hash": ""
+  },
+  "karate/README.md": {
+    "mtime": 1795598702.377339,
+    "seen": 1795598712.0649831,
+    "ast_hash": "6dbdef2f6cfa0e5aadfdd380f8ce0edc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/static/Spring 2V0-72.22 Study Cards.html": {
+    "mtime": 1795528638.0,
+    "seen": 1795598712.0649834,
+    "ast_hash": "589c74cf7a17e275d7d74da2d015e89e",
+    "semantic_hash": ""
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1795104810.2021444,
+    "seen": 1795164318.964355,
+    "ast_hash": "31c116a08c14c9806466d7f97aca43fc",
+    "semantic_hash": ""
+  },
+  ".mcp.json": {
+    "mtime": 1795104393.002517,
+    "seen": 1795164318.9643788,
+    "ast_hash": "404c9d54c0a8a5e062bf8954d4e1ffa0",
+    "semantic_hash": ""
+  },
+  "iac/floci-application-properties.json": {
+    "mtime": 1795100568.9434707,
+    "seen": 1795164318.964459,
+    "ast_hash": "8822e3e93da39f0a19000751674558eb",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/dto/PrincipalDto.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965191,
+    "ast_hash": "92440398848136ef733a4df368df01ba",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/CardController.java": {
+    "mtime": 1795524339.221331,
+    "seen": 1795524801.9856014,
+    "ast_hash": "ed6330f325472e553fc9c69e9ff784a4",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/StudyCardsPageController.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965193,
+    "ast_hash": "b3f57e12d1fee10abed76162b69c7b46",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/dto/CardDto.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965193,
+    "ast_hash": "cf52228c5339240da7e4550c8c780862",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/dto/CategoryCountDto.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965194,
+    "ast_hash": "19f45eb6b17f6b2aac39e121cf8ec8cb",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/dto/KindCountDto.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965195,
+    "ast_hash": "65328f5716106dfbb37eb92de65ce8aa",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/entity/Card.java": {
+    "mtime": 1795524322.082544,
+    "seen": 1795524801.9856057,
+    "ast_hash": "49f057c092b1ee5670974986c2abd63d",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/entity/CardFact.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.9651961,
+    "ast_hash": "f696ab2888508da0a3d256907d40b17b",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/entity/CardInfoTable.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965197,
+    "ast_hash": "1fc0d1d670f7faea4887c8b3c01ce4eb",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/entity/Category.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965197,
+    "ast_hash": "e138825a95813677749f28b73cd72af4",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/entity/Kind.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.965198,
+    "ast_hash": "5eb71fceb05ea2df2f9e1acf87a0fe30",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/repository/CardRepository.java": {
+    "mtime": 1795524915.0,
+    "seen": 1795525002.4747727,
+    "ast_hash": "767233f900ec7560496734e80ba2d8a0",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/repository/CategoryRepository.java": {
+    "mtime": 1795164724.0,
+    "seen": 1795166267.8620872,
+    "ast_hash": "effaca20aca33d8a080d4abca55ed808",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/repository/KindRepository.java": {
+    "mtime": 1795164743.0,
+    "seen": 1795166267.8620882,
+    "ast_hash": "7e1c218418f53d9cd99c33560cc856d8",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/service/CardService.java": {
+    "mtime": 1795524288.592586,
+    "seen": 1795524801.9856093,
+    "ast_hash": "9d0efce2fe95b818aa4d3a762986f6f2",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/service/CardServiceImpl.java": {
+    "mtime": 1795524329.622804,
+    "seen": 1795524801.9856098,
+    "ast_hash": "c6e9a8d77d1158d0d0c09eab49de2d3f",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/DepartmentController.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.9652019,
+    "ast_hash": "7042cdf2ad50ffb2e0018724c4dfafe6",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/entity/Department.java": {
+    "mtime": 1795163730.0,
+    "seen": 1795164318.9652019,
+    "ast_hash": "75ca30ce576eedfb9cec61f68cb364c8",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/entity/excpetion/DepartmentNotFoundException.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965203,
+    "ast_hash": "82f169b7d17052eb0257ebf11e087ee3",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/repository/DepartmentRepository.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965204,
+    "ast_hash": "64246b7dac609a535b7cc8f9ac63504c",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/repository/DepartmentSpecifications.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965204,
+    "ast_hash": "7b6eda481414499052caa10db7eb85ac",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/service/DepartmentService.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965205,
+    "ast_hash": "8fa113c63406944905828765e0c099c2",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/department/service/DepartmentServiceImpl.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965206,
+    "ast_hash": "a8e3a27e9e466acb801b24f8bbd84293",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/sample/SampleBean.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965207,
+    "ast_hash": "beec75c788785a7ffd198636f0a1a44e",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/sample/SampleController.java": {
+    "mtime": 1795164272.0,
+    "seen": 1795164318.965208,
+    "ast_hash": "bcffa0d8f01cbed01aa9e6542b47c609",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/sample/SamplePostProcessor.java": {
+    "mtime": 1795188822.0,
+    "seen": 1795190133.930604,
+    "ast_hash": "6e45343b95c09622061f1c9df90b1e17",
+    "semantic_hash": ""
+  },
+  ".devcontainer/README.md": {
+    "mtime": 1795183874.3178823,
+    "seen": 1795183877.3677638,
+    "ast_hash": "45a44a552bb81b52d6de44e1d15f1165",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1795598702.377237,
+    "seen": 1795598712.0649784,
+    "ast_hash": "2acda96008974695e833aaafbf22e36c",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1795598702.376894,
+    "seen": 1795598712.06498,
+    "ast_hash": "3807400be210d6e5248963438996c61c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data.sql": {
+    "mtime": 1795090503.0,
+    "seen": 1795172499.0771341,
+    "ast_hash": "51fe42b6a58cecafb38b37afeaa0d33f",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/card/repository/CardRepositoryTests.java": {
+    "mtime": 1795524404.092475,
+    "seen": 1795524801.9856205,
+    "ast_hash": "9c5eed1dc2c3a73a2e4509fcf6f24109",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/card/repository/CategoryRepositoryTests.java": {
+    "mtime": 1795174577.50574,
+    "seen": 1795174624.9802535,
+    "ast_hash": "19c3c1b487264c2accf799b4724aff8f",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/card/repository/KindRepositoryTests.java": {
+    "mtime": 1795174577.505293,
+    "seen": 1795174624.980254,
+    "ast_hash": "e149cc416a05a00a96e72e79f4e68868",
+    "semantic_hash": ""
+  },
+  "src/test/resources/card-test-data.sql": {
+    "mtime": 1795173390.420372,
+    "seen": 1795173421.941144,
+    "ast_hash": "e2ca64fb9a0764b39b4115f0085a3e0d",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/card/CardControllerTests.java": {
+    "mtime": 1795524390.268692,
+    "seen": 1795524801.9856203,
+    "ast_hash": "60ec7f9ac0eaaeb6e8cf8a275e10b6f7",
+    "semantic_hash": ""
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1795528063.53247,
+    "seen": 1795528115.0417566,
+    "ast_hash": "022e28658b9cd5e09abcb2e6c20aded3",
+    "semantic_hash": ""
+  },
+  "SETUP.md": {
+    "mtime": 1795185825.8221097,
+    "seen": 1795185827.113457,
+    "ast_hash": "b44a2f72eb709a984fc3153a35bf59e8",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/department/DepartmentControllerTests.java": {
+    "mtime": 1795184503.0,
+    "seen": 1795184529.3009403,
+    "ast_hash": "c286660c51123fa90caf1104e7747cab",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/AbstractAuthenticationTests.java": {
+    "mtime": 1795185110.5480332,
+    "seen": 1795185143.2346983,
+    "ast_hash": "3c59e876ab1b5b3d736153e80fa7b2b6",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/AuthorizationCodePkceTests.java": {
+    "mtime": 1795184904.14107,
+    "seen": 1795184924.9127784,
+    "ast_hash": "2f88dcbecf03f2c3bbccdfa0aff097ce",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/BearerTokenTests.java": {
+    "mtime": 1795184904.1738517,
+    "seen": 1795184924.912779,
+    "ast_hash": "bfee4761207603bacbc6529937533f48",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/ClientCredentialsTests.java": {
+    "mtime": 1795184904.1583548,
+    "seen": 1795184924.9127796,
+    "ast_hash": "eb2d906a410cc9db485d629fb0ae2819",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/CognitoLogin.java": {
+    "mtime": 1795184854.2582524,
+    "seen": 1795184924.9127798,
+    "ast_hash": "32237a39ae591bbb4327ecc82cd0f384",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/FakeCognito.java": {
+    "mtime": 1795184854.2768986,
+    "seen": 1795184924.9127803,
+    "ast_hash": "e4cffab3e3631248610ebe2dfd12b8b9",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/OidcLoginTests.java": {
+    "mtime": 1795184904.1202087,
+    "seen": 1795184924.9127805,
+    "ast_hash": "0e780dab98621023ee0f621e38563aa2",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/Pkce.java": {
+    "mtime": 1795184854.2412984,
+    "seen": 1795184924.912781,
+    "ast_hash": "186a5dcc613af5b7ed14f48a79a0e261",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/security/TestKeys.java": {
+    "mtime": 1795184854.2212481,
+    "seen": 1795184924.9127817,
+    "ast_hash": "56fc848543355f9623d4df5e3a388f6b",
+    "semantic_hash": ""
+  },
+  "iac/.claude/settings.local.json": {
+    "mtime": 1795189631.7637656,
+    "seen": 1795190133.930557,
+    "ast_hash": "d5f71f0e1fbf607673e253111ab5e19f",
+    "semantic_hash": ""
+  },
+  "iac/helper.ts": {
+    "mtime": 1795188486.0,
+    "seen": 1795190133.93056,
+    "ast_hash": "72a1f8bb1ea5db90cff3db12028eab8d",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/dto/CardNameDto.java": {
+    "mtime": 1795524282.927199,
+    "seen": 1795524801.9856033,
+    "ast_hash": "58681ef1f8bd89b5da00bae7691ad3da",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/card/dto/CardPageDto.java": {
+    "mtime": 1795524278.781556,
+    "seen": 1795524801.9856038,
+    "ast_hash": "85a560d6ffae9edb63cfe3ddc85bb632",
+    "semantic_hash": ""
+  },
+  "docs/card-loading-options.md": {
+    "mtime": 1795527446.400942,
+    "seen": 1795527462.1003518,
+    "ast_hash": "ebeaf62d16bd14803443b98b09c87cb7",
+    "semantic_hash": ""
+  },
+  "docs/writing-style.md": {
+    "mtime": 1795527058.137896,
+    "seen": 1795527084.7763479,
+    "ast_hash": "4dc2135a6a59cb60b1369f13bef0228c",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/about/AboutController.java": {
+    "mtime": 1795528010.031525,
+    "seen": 1795528115.0417297,
+    "ast_hash": "6148bac78723ddfd24510e7bc1aa5cf6",
+    "semantic_hash": ""
+  },
+  "src/main/java/eu/meiyu/training/feature/about/dto/AboutDto.java": {
+    "mtime": 1795528002.61016,
+    "seen": 1795528115.0417304,
+    "ast_hash": "a3c39d36ce48d1ade709dc724f15d25c",
+    "semantic_hash": ""
+  },
+  "src/test/java/eu/meiyu/training/feature/about/AboutControllerTests.java": {
+    "mtime": 1795528021.616706,
+    "seen": 1795528115.0417478,
+    "ast_hash": "75b54b1b4994ebd92d25804d00e50fe2",
+    "semantic_hash": ""
+  },
+  "iac/package-lock.json": {
+    "mtime": 1795190403.8503242,
+    "seen": 1795524801.9856327,
+    "ast_hash": "ca9f35d2dc9e02a1e9a12b961d94ff00",
+    "semantic_hash": ""
+  }
+}

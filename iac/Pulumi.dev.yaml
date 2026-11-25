@@ -1,0 +1,13 @@
+encryptionsalt: v1:uJUmMrO/zg4=:v1:6Ym4cDDMHHVowz5P:JnZ3bGTkMWk2gZcHuf6INYyRHKwZXg==
+config:
+  aws:region: us-east-1
+  aws:accessKey: test
+  aws:secretKey: test
+  aws:skipCredentialsValidation: "true"
+  aws:skipRequestingAccountId: "true"
+  aws:skipMetadataApiCheck: "true"
+  aws:s3UsePathStyle: "true"
+  aws:endpoints: '[{"cognitoidentityprovider": "http://localhost:4566", "cognitoidp": "http://localhost:4566", "rds": "http://localhost:4566", "ec2": "http://localhost:4566", "iam": "http://localhost:4566", "ecs": "http://localhost:4566"}]'
+  iac:dbUsername: postgres
+  iac:dbPassword: Postgres123!
+  iac:dbName: training-db

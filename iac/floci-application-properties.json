@@ -1,0 +1,23 @@
+{
+  "spring.datasource.url": "jdbc:postgresql://${hostAlias}:${dbPort}/${dbName}",
+  "spring.datasource.username": "${dbUsername}",
+  "spring.datasource.password": "${dbPassword}",
+
+  "spring.security.oauth2.client.registration.sso.client-id": "${clientId}",
+  "spring.security.oauth2.client.registration.sso.client-secret": "${clientSecret}",
+  "spring.security.oauth2.client.registration.sso.provider": "floci-cognito",
+  "spring.security.oauth2.client.provider.floci-cognito.authorization-uri": "${flociBrowserUrl}/cognito-idp/oauth2/authorize",
+  "spring.security.oauth2.client.provider.floci-cognito.token-uri": "${flociContainerUrl}/cognito-idp/oauth2/token",
+  "spring.security.oauth2.client.provider.floci-cognito.user-info-uri": "${flociContainerUrl}/cognito-idp/oauth2/userInfo",
+  "spring.security.oauth2.client.provider.floci-cognito.jwk-set-uri": "${flociContainerUrl}/${userPoolId}/.well-known/jwks.json",
+  "spring.security.oauth2.client.provider.floci-cognito.user-name-attribute": "sub",
+  "app.security.idp-logout.endpoint": "${flociBrowserUrl}/cognito-idp/logout",
+  "app.security.idp-logout.post-logout-redirect-uri": "${ecsAppUrl}/",
+
+  "spring.security.oauth2.authorizationserver.issuer": "${ecsAppUrl}",
+  "spring.security.oauth2.authorizationserver.client.frontend.registration.redirect-uris": "http://localhost:4200/callback,${ecsAppUrl}/oauth2/callback",
+
+  "server.servlet.session.cookie.name": "JSESSIONID_ECS",
+
+  "otel.exporter.otlp.endpoint": "http://${hostAlias}:4318"
+}

@@ -1,0 +1,708 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Spring 2V0-72.22 Study Cards</title>
+<script>try{if(localStorage.getItem("spring2v0-brand")==="spring")document.documentElement.dataset.brand="spring"}catch(e){}</script>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: index-card study desk. Sticky toolbar, then either a card grid (overview) or one big flip card (study). */
+:root{
+  /* meiyu.eu brand palette (logo marks), same as floci-theme/login.css */
+  --brand-purple:#8C4091; --brand-red:#DC3A4C; --brand-orange:#E87D33;
+  --brand-stripe:linear-gradient(90deg,var(--brand-purple),var(--brand-red),var(--brand-orange));
+  --bg:#f6f5f7; --surface:#ffffff; --surface-2:#ecebee; --fg:#111111; --muted:#646970; --line:#dcdcde;
+  --accent:#8C4091; --accent-ink:#ffffff; --accent-soft:#f3e8f4; --code-bg:#f6f5f7; --warn:#b4561a; --warn-soft:#fdf1e7;
+  --c-core:#8C4091; --c-aop:#5a4fb0; --c-data:#1f6fa8; --c-jpa:#0f7f7a; --c-web:#c4621f; --c-sec:#c42f42; --c-test:#8a6d00; --c-boot:#4a5a8c;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101517; --surface:#1b1f22; --surface-2:#252a2e; --fg:#f1f1f1; --muted:#a7aaad; --line:#32373c;
+  --accent:#c27fc7; --accent-ink:#101517; --accent-soft:#2e1f30; --code-bg:#15191b; --warn:#f0a75a; --warn-soft:#33241a;
+  --c-core:#c27fc7; --c-aop:#a99cf0; --c-data:#6db3e8; --c-jpa:#4fcfc6; --c-web:#f09a5e; --c-sec:#f07a89; --c-test:#e0c24a; --c-boot:#97a8e0;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101517; --surface:#1b1f22; --surface-2:#252a2e; --fg:#f1f1f1; --muted:#a7aaad; --line:#32373c;
+  --accent:#c27fc7; --accent-ink:#101517; --accent-soft:#2e1f30; --code-bg:#15191b; --warn:#f0a75a; --warn-soft:#33241a;
+  --c-core:#c27fc7; --c-aop:#a99cf0; --c-data:#6db3e8; --c-jpa:#4fcfc6; --c-web:#f09a5e; --c-sec:#f07a89; --c-test:#e0c24a; --c-boot:#97a8e0;
+  color-scheme:dark}
+/* Spring palette (original colors), picked with the theme switch: <html data-brand="spring">. */
+:root[data-brand="spring"]{
+  --brand-stripe:var(--accent);
+  --bg:#f3f6f1; --surface:#ffffff; --surface-2:#e8eee4; --fg:#1b2419; --muted:#5b6857; --line:#d3dccd;
+  --accent:#3f7d20; --accent-ink:#ffffff; --accent-soft:#e1ecd6; --code-bg:#f0f3ee; --warn:#a4570a; --warn-soft:#fbeedd;
+  --c-core:#3f7d20; --c-aop:#7a4bb3; --c-data:#1f6fa8; --c-jpa:#0f7f7a; --c-web:#b5531c; --c-sec:#b0263d; --c-test:#8a6d00; --c-boot:#4a5a8c}
+@media (prefers-color-scheme: dark){:root[data-brand="spring"]:not([data-theme="light"]){
+  --bg:#121711; --surface:#1a2119; --surface-2:#232c21; --fg:#e4ebe0; --muted:#9aa894; --line:#2f3a2c;
+  --accent:#7cc354; --accent-ink:#0f150d; --accent-soft:#25351d; --code-bg:#151b14; --warn:#f0a75a; --warn-soft:#3a2a17;
+  --c-core:#7cc354; --c-aop:#b896e6; --c-data:#6db3e8; --c-jpa:#4fcfc6; --c-web:#ee915c; --c-sec:#f0798d; --c-test:#e0c24a; --c-boot:#97a8e0}}
+:root[data-brand="spring"][data-theme="dark"]{
+  --bg:#121711; --surface:#1a2119; --surface-2:#232c21; --fg:#e4ebe0; --muted:#9aa894; --line:#2f3a2c;
+  --accent:#7cc354; --accent-ink:#0f150d; --accent-soft:#25351d; --code-bg:#151b14; --warn:#f0a75a; --warn-soft:#3a2a17;
+  --c-core:#7cc354; --c-aop:#b896e6; --c-data:#6db3e8; --c-jpa:#4fcfc6; --c-web:#ee915c; --c-sec:#f0798d; --c-test:#e0c24a; --c-boot:#97a8e0}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto}
+.wrap::before{content:"";display:block;height:4px;background:var(--brand-stripe);border-radius:0 0 4px 4px}
+header.top{padding-block:32px 16px;display:grid;gap:8px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;color:var(--fg);font:600 14px var(--body);padding:8px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+input[type=search]{flex:1 1 220px;min-width:0;font:15px var(--body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:4px 12px;font:600 13px var(--body);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--cc,var(--muted))}
+.chip .n{color:var(--muted);font-weight:400;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.toggle{font-size:14px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.progress{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;margin-left:auto}
+.meter{height:4px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--brand-stripe);width:0;transition:width .3s}
+button:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Overview grid: a tall spacer with only the visible rows in the DOM. */
+.vgrid{position:relative;width:100%}
+.vgrid>.card{position:absolute;top:0;left:0}
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--cc);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.card.known{opacity:.62}
+.card h3{font-family:var(--mono);font-size:17px;font-weight:600;margin:0;word-break:break-word}
+.meta{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.cat{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cc)}
+.def{margin:0}
+.facts{margin:0;padding-left:18px;display:grid;gap:3px;font-size:15px}
+.card,.face{overflow-wrap:anywhere}
+.facts li,.def,.depnote{min-width:0}
+.uselink{overflow-wrap:anywhere;text-align:left}
+.facts li.trap{color:var(--warn)}
+.facts li.trap::marker{content:"⚠ "}
+pre{margin:0;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;overflow-x:auto;font:13px/1.45 var(--mono);color:var(--fg)}
+.mark{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:6px;font:600 12px var(--body);padding:3px 8px;cursor:pointer;white-space:nowrap}
+.mark[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+.empty{color:var(--muted);padding:40px 0;text-align:center}
+.more{min-height:64px;display:grid;place-items:center;color:var(--muted);font:13px var(--mono)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ver,.dep{font:600 11px/1.6 var(--mono);border-radius:4px;padding:0 6px;border:1px solid var(--line);white-space:nowrap}
+.ver{color:var(--muted);background:var(--surface-2)}
+.dep{color:var(--warn);background:var(--warn-soft);border-color:var(--warn)}
+.offexam{color:var(--accent);background:var(--accent-soft);border:1px var(--accent) solid}
+.depnote{margin:0;font-size:14px;color:var(--warn);background:var(--warn-soft);border-left:3px solid var(--warn);padding:6px 10px;border-radius:0 4px 4px 0}
+.uselink{border:0;background:none;padding:0;font:600 14px var(--mono);color:var(--accent);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.uselink:hover{text-decoration-thickness:2px}
+.chip.extra{border-style:dashed;border-color:var(--accent)}
+.card.flash{outline:3px solid var(--accent);outline-offset:2px;transition:outline-color 1.5s}
+.tbl{overflow-x:auto;min-width:0}
+.tbl table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.tbl caption{text-align:left;font-weight:600;font-size:13px;color:var(--muted);padding-bottom:4px}
+.tbl th,.tbl td{border:1px solid var(--line);padding:3px 6px;text-align:center}
+.tbl thead th{background:var(--surface-2);font-weight:600}
+.tbl tbody th{font:600 12px var(--mono);text-align:left;white-space:nowrap;overflow-wrap:normal}
+.tbl td.yes{color:var(--warn);background:var(--warn-soft)}
+.tbl td.no{color:var(--accent);background:var(--accent-soft)}
+.kind{font:600 11px/1.6 var(--mono);border-radius:4px;padding:0 6px;white-space:nowrap;color:var(--cc);border:1px solid var(--cc);background:var(--surface)}
+.chip.kindchip{border-radius:6px}
+.chip.kindchip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip.kindchip[aria-pressed="true"] .n{color:inherit;opacity:.7}
+.relnote{margin:0;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.relnote .uselink{font-size:13px}
+.src{font:600 12px var(--mono);color:var(--muted);text-decoration:underline;text-underline-offset:3px;justify-self:start}
+.src:hover{color:var(--accent)}
+.deprecated h3{text-decoration:line-through;text-decoration-color:var(--warn);text-decoration-thickness:2px}
+
+/* Study mode */
+.study{padding-top:24px;display:grid;gap:16px;justify-items:center}
+.flip{width:100%;max-width:720px;min-height:360px;perspective:1600px;cursor:pointer}
+.flip-inner{position:relative;width:100%;min-height:inherit;transition:transform .5s;transform-style:preserve-3d;display:grid}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--cc);border-radius:8px;padding:24px;display:grid;gap:12px;align-content:start;min-width:0;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 31px,var(--surface-2) 31px 32px);background-position:0 72px}
+.face.front{align-content:center;justify-items:center;text-align:center;background-image:none}
+.face.back{transform:rotateY(180deg);background-image:none}
+.front .q{font-family:var(--mono);font-size:clamp(24px,5vw,36px);font-weight:600;word-break:break-word}
+.front .hint{color:var(--muted);font-size:14px}
+.ctrls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);font:600 15px var(--body);padding:10px 16px;border-radius:8px;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.again{border-color:var(--warn);color:var(--warn)}
+.kbd{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.version-badge{position:fixed;right:max(10px,env(safe-area-inset-right,0px));bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:-99;
+  ;color:var(--muted);opacity:.72;
+  font:0.6rem var(--mono);pointer-events:none;user-select:none}
+.legend{font-size:14px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.legend b{color:var(--warn);font-weight:600}
+@media (prefers-reduced-motion: reduce){.flip-inner,.meter i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="row" style="justify-content:space-between">
+      <div class="eyebrow">VMware Spring Professional · 2V0-72.22</div>
+      <div class="seg" role="group" aria-label="Theme">
+        <button data-brand="meiyu" aria-pressed="true">Meiyu</button>
+        <button data-brand="spring" aria-pressed="false">Spring</button>
+      </div>
+    </div>
+    <h1>Spring study cards</h1>
+    <p class="lede">Annotations, Boot starters, properties, key interfaces, expressions, Actuator endpoints and core concepts from the exam blueprint, grouped by section: Container, AOP, Data &amp; Transactions, Spring Data JPA, Web/REST, Security, Testing and Boot. Filter by kind or section, browse the overview, or switch to Study and flip through them like index cards. Your progress is kept in this browser.</p>
+    <p class="legend"><b>⚠</b> marks a classic exam trap. The grey badge shows the version an annotation was introduced in; an orange badge means it is deprecated. The exam targets Spring 5.3, Boot 2.x and Security 5.x. Search “deprecated” to list deprecated ones. A dashed “not on exam” badge marks newer annotations outside that baseline; tick “Hide non-exam” to hide them.</p>
+  </header>
+
+  <div class="bar">
+    <div class="row">
+      <div class="seg" role="group" aria-label="Mode">
+        <button id="m-overview" aria-pressed="true">Overview</button>
+        <button id="m-study" aria-pressed="false">Study</button>
+      </div>
+      <input id="q" type="search" placeholder="Search cards, e.g. Transactional, starter-web, ddl-auto" aria-label="Search">
+      <label class="toggle" title="Hide annotations newer than the exam baseline (Spring 5.3 / Boot 2.x / Security 5.x)"><input id="hideOffExam" type="checkbox"> Hide non-exam</label>
+      <label class="toggle"><input id="hideKnown" type="checkbox"> Hide known</label>
+      <span class="progress" id="prog"></span>
+    </div>
+    <div class="row" id="kinds" role="group" aria-label="Kind"></div>
+    <div class="row" id="chips" role="group" aria-label="Section"></div>
+    <div class="meter"><i id="meter"></i></div>
+  </div>
+
+  <main id="view"></main>
+</div>
+
+<div id="version-badge" class="version-badge" aria-label="Application version" hidden></div>
+
+<script>
+const KINDS={};
+const CATS={};
+const CARDS=[];
+
+async function getJson(url){
+  const r=await fetch(url,{headers:{Accept:"application/json"}});
+  if(!r.ok)throw new Error(`${url}: HTTP ${r.status}`);
+  return r.json();
+}
+function toKind(a){
+  return {id:a.id,name:a.name,badge:a.name.toLowerCase(),hint:a.hint,count:a.cardCount};
+}
+function toCard(a){
+  return {
+    id:a.id,
+    n:a.name,
+    c:a.category.code,
+    k:a.kind.id,
+    d:a.description,
+    f:a.facts.map(f=>(f.important?"!":"")+f.text),
+    x:a.exampleCode||undefined,
+    t:a.infoTables&&a.infoTables.length?a.infoTables.map(t=>({cap:t.caption,h:t.headers,r:t.rows})):undefined,
+    rel:a.relatedCards.length?a.relatedCards.map(r=>r.name):undefined,
+    src:a.sourceUrl||undefined
+  };
+}
+function setCatCounts(cats){
+  for(const a of cats)if(CATS[a.code])CATS[a.code].count=a.cardCount;
+}
+// The backend pages /cards. CARDS holds the pages loaded for the current filters; the small
+// maps keep links working without downloading every card at startup (id/name index + full
+// cards fetched so far). PAGE_SIZE must match @PageableDefault on the backend.
+const PAGE_SIZE=24;
+const PREFETCH_MARGIN="1200px 0px"; // start loading ~1 screen before the user reaches the end
+const cardByName=new Map();  // name -> card (fetched so far)
+const cardNames=new Map();   // name -> id for every card (from /cards/names)
+let cardPage=0,cardHasMore=true,cardLoading=false,cardsSeq=0,suppressAppend=false;
+
+async function loadData(){
+  const[kinds,cats,names]=await Promise.all([getJson("/cards/kinds"),getJson("/cards/categories"),getJson("/cards/names")]);
+  for(const a of kinds)KINDS[a.id]=toKind(a);
+  for(const a of cats)CATS[a.code]={id:a.id,name:a.name,color:"--c-"+a.code,count:a.cardCount};
+  for(const a of names)cardNames.set(a.name,a.id);
+  validateCardData();
+  await loadCardPage();
+}
+// Section counts depend on the selected kinds: ask the backend. A sequence number drops stale responses.
+let catCountSeq=0;
+async function loadCatCounts(){
+  const seq=++catCountSeq;
+  const qs=new URLSearchParams();
+  for(const k of state.kinds)qs.append("kind_ids",k);
+  const cats=await getJson("/cards/categories"+(qs.size?"?"+qs:""));
+  if(seq===catCountSeq)setCatCounts(cats);
+}
+// Fetch the next page. A filter change bumps cardsSeq, so an in-flight response for the
+// old filter is discarded instead of appending stale cards.
+async function loadCardPage(){
+  if(cardLoading||!cardHasMore)return false;
+  const gen=cardsSeq;
+  cardLoading=true;
+  const qs=new URLSearchParams({page:String(cardPage),size:String(PAGE_SIZE)});
+  for(const k of state.kinds)qs.append("kind_ids",k);
+  for(const c of state.cats)qs.append("category_ids",CATS[c].id);
+  try{
+    const p=await getJson("/cards?"+qs);
+    if(gen!==cardsSeq)return false;
+    for(const raw of p.content){
+      const c=toCard(raw);enrichCard(c);
+      CARDS.push(c);cardByName.set(c.n,c);
+      if(!KINDS[c.k]||!CATS[c.c])console.warn(`Unknown kind/section on ${c.n}`);
+      for(const r of c.rel||[])if(!cardNames.has(r))console.warn(`Related card missing for ${c.n}: ${r}`);
+    }
+    cardPage=p.page+1;
+    cardHasMore=!p.last;
+    if(state.mode==="overview"&&!suppressAppend&&$("#view .vgrid"))appendLoaded();
+    return true;
+  }finally{if(gen===cardsSeq){cardLoading=false;updateMore()}}
+}
+function resetCards(){
+  cardsSeq++;CARDS.length=0;cardPage=0;cardHasMore=true;cardLoading=false;
+  // state.extra cards remain in cardByName and are re-added by filtered().
+}
+function noMatchMessage(){
+  clearVirtual();
+  $("#view")?.replaceChildren(el("p",{class:"empty",text:"No cards match. Clear the search or pick another kind or section."}));
+}
+// Search and hide filters are client-side, so pull pages until enough cards survive them.
+async function fillVisible(min=8){
+  let guard=0;
+  while(cardHasMore&&filtered().length<min&&guard++<30){if(!await loadCardPage())break}
+  if(state.mode==="overview"&&!cardHasMore&&!filtered().length)noMatchMessage();
+}
+async function ensureAllCards(){
+  let guard=0;
+  while(cardHasMore&&guard++<100){if(!await loadCardPage())break}
+}
+async function loadMore(){
+  if(cardLoading||!cardHasMore)return;
+  const before=filtered().length;
+  if(!await loadCardPage())return;
+  // If the fresh page contains few matches, keep reading ahead so scrolling never stalls.
+  let guard=0;
+  while(cardHasMore&&filtered().length<before+8&&guard++<10){if(!await loadCardPage())break}
+  if(!cardHasMore&&!filtered().length)noMatchMessage();
+}
+// Changing kinds also changes the section counts; changing sections only changes the cards.
+async function selectionChanged(kindsChanged){
+  // Keep the old grid untouched while the new filter's pages arrive; refresh swaps it at the end.
+  suppressAppend=true;
+  resetCards();
+  try{
+    await Promise.all([kindsChanged?loadCatCounts():null,loadCardPage()]);
+    if(state.mode==="study")await ensureAllCards();else await fillVisible();
+  }catch(e){console.error(e)}
+  finally{suppressAppend=false;refresh(true)}
+}
+
+// Version the card subject was introduced in.
+const VER={
+ "@Configuration":"Spring 3.0","@Bean":"Spring 3.0","@ComponentScan":"Spring 3.1","@Component":"Spring 2.5",
+ "@Service":"Spring 2.5","@Repository":"Spring 2.0","@Controller":"Spring 2.5","@Autowired":"Spring 2.5",
+ "@Qualifier":"Spring 2.5","@Primary":"Spring 3.0","@Value":"Spring 3.0","@PropertySource":"Spring 3.1",
+ "@Profile":"Spring 3.1","@Scope":"Spring 2.5","@Lazy":"Spring 3.0","@Import":"Spring 3.0",
+ "@PostConstruct / @PreDestroy":"JSR-250 · Spring 2.5","@DependsOn":"Spring 3.0",
+ "@Resource / @Inject":"Spring 2.5 / 3.0 (JSR-330)","@Conditional":"Spring 4.0",
+ "@Aspect":"AspectJ 5 · Spring 2.0","@EnableAspectJAutoProxy":"Spring 3.1","@Pointcut":"AspectJ 5 · Spring 2.0",
+ "@Before":"AspectJ 5 · Spring 2.0","@AfterReturning":"AspectJ 5 · Spring 2.0","@AfterThrowing":"AspectJ 5 · Spring 2.0",
+ "@After":"AspectJ 5 · Spring 2.0","@Around":"AspectJ 5 · Spring 2.0",
+ "@Transactional":"Spring 1.2","@EnableTransactionManagement":"Spring 3.1","@Sql":"Spring 4.1",
+ "@Entity / @Id / @Table / @Column":"JPA 1.0","@EnableJpaRepositories":"Spring Data JPA 1.x","@Query":"Spring Data JPA 1.0",
+ "@EntityScan":"Boot 1.4",
+ "@RestController":"Spring 4.0","@RequestMapping":"Spring 2.5",
+ "@GetMapping / @PostMapping / @PutMapping / @DeleteMapping / @PatchMapping":"Spring 4.3",
+ "@PathVariable":"Spring 3.0","@RequestParam":"Spring 2.5","@RequestBody":"Spring 3.0","@ResponseBody":"Spring 3.0",
+ "@ResponseStatus":"Spring 3.0","@RequestHeader / @CookieValue":"Spring 3.0","@ExceptionHandler":"Spring 3.0",
+ "@ControllerAdvice / @RestControllerAdvice":"Spring 3.2 / 4.3","@ModelAttribute":"Spring 2.5","@EnableWebMvc":"Spring 3.1",
+ "@EnableWebSecurity":"Security 3.2","@EnableMethodSecurity":"Security 5.6","@EnableGlobalMethodSecurity":"Security 3.2",
+ "@PreAuthorize / @PostAuthorize":"Security 3.0","@Secured / @RolesAllowed":"Security 2.0 / JSR-250",
+ "@WithMockUser":"Security 4.0",
+ "@SpringJUnitConfig":"Spring 5.0","@ExtendWith(SpringExtension.class)":"Spring 5.0","@ContextConfiguration":"Spring 2.5",
+ "@ActiveProfiles":"Spring 3.1","@TestPropertySource":"Spring 4.1","@DirtiesContext":"Spring 2.5",
+ "@Rollback / @Commit":"Spring 2.5 / 4.2","@SpringBootTest":"Boot 1.4","@WebMvcTest":"Boot 1.4","@DataJpaTest":"Boot 1.4",
+ "@MockBean / @SpyBean":"Boot 1.4","@MockitoBean / @MockitoSpyBean":"Spring 6.2 · Boot 3.4","@AutoConfigureMockMvc":"Boot 1.4","@TestConfiguration":"Boot 1.4","@LocalServerPort":"Boot 1.4",
+ "@SpringBootApplication":"Boot 1.2","@EnableAutoConfiguration":"Boot 1.0",
+ "@ConditionalOnClass / @ConditionalOnMissingClass":"Boot 1.0","@ConditionalOnBean / @ConditionalOnMissingBean":"Boot 1.0",
+ "@ConditionalOnProperty":"Boot 1.1","@AutoConfigureAfter / @AutoConfigureBefore":"Boot 1.0","@AutoConfigureOrder":"Boot 1.3","@ConfigurationProperties":"Boot 1.0","@EnableConfigurationProperties":"Boot 1.0",
+ "@Endpoint (Actuator)":"Boot 2.0",
+ "@ImportResource":"Spring 3.0","@Named":"Spring 3.0 (JSR-330)","@Nullable":"Spring 5.0","@Validated":"Spring 3.1","@AliasFor":"Spring 4.2",
+ "@SqlConfig":"Spring 4.1","@SqlMergeMode":"Spring 5.2",
+ "@GeneratedValue":"JPA 1.0","@OneToMany / @ManyToOne / @JoinColumn":"JPA 1.0","@Transient":"JPA 1.0",
+ "@Modifying":"Spring Data JPA 1.0","@Param":"Spring Data 1.0",
+ "@Valid":"Bean Validation 1.0 (JSR-303)","@NotNull / @NotEmpty / @NotBlank / @Size / @Min / @Max / @Email":"Bean Validation 1.0 / 2.0",
+ "@InitBinder":"Spring 2.5","@PreFilter / @PostFilter":"Security 3.0",
+ "@RunWith":"JUnit 4","@AutoConfigureTestDatabase":"Boot 1.4","@Mock / @Spy / @InjectMocks":"Mockito","@TestBean":"Spring 6.2",
+ "@SpringBootConfiguration":"Boot 1.4","@ConfigurationPropertiesScan":"Boot 2.2","@ConstructorBinding":"Boot 2.2",
+ "@ReadOperation / @WriteOperation / @DeleteOperation":"Boot 2.0","@Selector":"Boot 2.0","@WebEndpoint / @JmxEndpoint":"Boot 2.0"
+};
+// Deprecations: since which version, and the card name of the replacement (resolved via /cards/names).
+const DEP={
+ "@EnableGlobalMethodSecurity":{since:"Security 5.8",use:"@EnableMethodSecurity"},
+ "@MockBean / @SpyBean":{since:"Boot 3.4",use:"@MockitoBean / @MockitoSpyBean"}
+};
+// Annotations newer than the 2V0-72.22 baseline (Spring 5.3 / Boot 2.x / Security 5.x).
+const OFF_EXAM=new Set(["@MockitoBean / @MockitoSpyBean","@TestBean"]);
+// Adds the page-only data (version, deprecation, off-exam) to a loaded card.
+function enrichCard(c){c.v=VER[c.n];c.dep=DEP[c.n];c.offExam=OFF_EXAM.has(c.n)}
+// Static metadata is checked against the complete name index, not just the loaded page.
+function validateCardData(){
+  for(const[k,d]of Object.entries(DEP))if(!cardNames.has(d.use))console.warn(`Replacement card missing for ${k}: ${d.use}`);
+  for(const n of[...Object.keys(VER),...OFF_EXAM])if(!cardNames.has(n))console.warn(`VER/OFF_EXAM entry without card: ${n}`);
+}
+
+const LS="spring2v0-known";
+let known=new Set();
+try{known=new Set(JSON.parse(localStorage.getItem(LS)||"[]"))}catch(e){}
+const saveKnown=()=>{try{localStorage.setItem(LS,JSON.stringify([...known]))}catch(e){}};
+
+// extra: cards added to the current filter via a "use instead" link; shown regardless of other filters.
+const state={mode:"overview",cats:new Set(),kinds:new Set(),q:"",hideKnown:false,hideOffExam:false,extra:new Set(),deck:[],idx:0,flipped:false};
+const $=s=>document.querySelector(s);
+const el=(t,p={},...k)=>{const e=document.createElement(t);for(const[a,v]of Object.entries(p)){if(a==="class")e.className=v;else if(a==="text")e.textContent=v;else if(a.startsWith("on"))e.addEventListener(a.slice(2),v);else e.setAttribute(a,v)}k.flat().forEach(c=>c!=null&&e.append(c));return e};
+
+function filtered(){
+  const q=state.q.trim().toLowerCase();
+  // CARDS is already filtered by kind/section on the server. Extra cards from links may
+  // live outside the current page, so add them from the cache before applying local filters.
+  const all=[...CARDS];
+  for(const n of state.extra){const c=cardByName.get(n);if(c&&!all.includes(c))all.push(c)}
+  return all.filter(c=>state.extra.has(c.n)||(!state.hideKnown||!known.has(c.n))&&(!state.hideOffExam||!c.offExam)&&
+    (!q||(c.n+" "+c.d+" "+c.f.join(" ")+" "+(c.t?[].concat(c.t).flatMap(t=>t.r.flat()).join(" "):"")+" "+(c.x||"")+" "+(c.v||"")+" "+KINDS[c.k].badge+(c.dep?" deprecated "+c.dep.since+" "+c.dep.use:"")).toLowerCase().includes(q)));
+}
+function relNote(c){
+  if(!c.rel||!c.rel.length)return null;
+  return el("p",{class:"relnote"},"Related:",...c.rel.map(r=>el("button",{class:"uselink",title:"Add this card to the current filter",text:r,onclick:e=>{e.stopPropagation();showAlso(r)}})));
+}
+function srcLink(c){
+  return c.src?el("a",{class:"src",href:c.src,target:"_blank",rel:"noopener",onclick:e=>e.stopPropagation(),text:"Docs ↗"}):null;
+}
+function tags(c){
+  const t=el("div",{class:"tags"});
+  // Most cards are annotations, so only the other kinds get a badge.
+  if(KINDS[c.k].name!=="Annotation")t.append(el("span",{class:"kind",text:KINDS[c.k].badge}));
+  if(c.v)t.append(el("span",{class:"ver",title:"Introduced in",text:"since "+c.v}));
+  if(c.dep)t.append(el("span",{class:"dep",text:"deprecated · "+c.dep.since}));
+  if(c.offExam)t.append(el("span",{class:"ver offexam",title:"Newer than the exam baseline",text:"not on exam"}));
+  return t;
+}
+function depNote(c){
+  if(!c.dep)return null;
+  const has=cardNames.has(c.dep.use);
+  const use=has?el("button",{class:"uselink",title:"Add this card to the current filter",text:c.dep.use,onclick:e=>{e.stopPropagation();showAlso(c.dep.use)}}):c.dep.use;
+  return el("p",{class:"depnote"},`Deprecated since ${c.dep.since}. Use `,use,` instead.`);
+}
+// Resolve a link target from cache first, then from the single-card endpoint (lazy loading).
+async function cardFor(name){
+  const cached=cardByName.get(name);if(cached)return cached;
+  const id=cardNames.get(name);if(!id)return null;
+  try{
+    const c=toCard(await getJson("/cards/"+id));enrichCard(c);
+    cardByName.set(c.n,c);return c;
+  }catch(e){console.error(e);return null}
+}
+async function showAlso(name){
+  const card=await cardFor(name);if(!card)return;
+  state.extra.add(name);
+  if(state.mode==="study"){
+    // Put the replacement right after the current card in the deck.
+    const i=state.deck.indexOf(card);
+    if(i>state.idx)state.deck.splice(i,1);
+    if(i===-1||i>state.idx)state.deck.splice(state.idx+1,0,card);
+    chips();renderStudy();return;
+  }
+  refresh(false);
+  const t=await scrollToCard(name);
+  if(t){t.classList.add("flash");setTimeout(()=>t.classList.remove("flash"),1600)}
+}
+function catVar(c){return `var(${CATS[c].color})`}
+
+function chips(){
+  const kb=$("#kinds");kb.replaceChildren();
+  // Counts come from the backend: kinds from /cards/kinds, sections from /cards/categories?kind_ids=...
+  const sum=o=>Object.values(o).reduce((a,v)=>a+v.count,0);
+  kb.append(el("button",{class:"chip kindchip","aria-pressed":String(!state.kinds.size),onclick:()=>{state.kinds.clear();selectionChanged(true)}},"All kinds",el("span",{class:"n",text:String(sum(KINDS))})));
+  for(const v of Object.values(KINDS)){const k=v.id;
+    const n=v.count;if(!n)continue;
+    kb.append(el("button",{class:"chip kindchip","aria-pressed":String(state.kinds.has(k)),onclick:()=>{state.kinds.has(k)?state.kinds.delete(k):state.kinds.add(k);selectionChanged(true)}},v.name,el("span",{class:"n",text:String(n)})));
+  }
+  const box=$("#chips");box.replaceChildren();
+  const all=el("button",{class:"chip","aria-pressed":String(!state.cats.size),onclick:()=>{state.cats.clear();selectionChanged(false)}},"All sections",el("span",{class:"n",text:String(sum(CATS))}));
+  box.append(all);
+  for(const[k,v]of Object.entries(CATS)){
+    const n=v.count;
+    const b=el("button",{class:"chip","aria-pressed":String(state.cats.has(k)),style:`--cc:${catVar(k)}`,onclick:()=>{state.cats.has(k)?state.cats.delete(k):state.cats.add(k);selectionChanged(false)}},el("span",{class:"dot"}),v.name,el("span",{class:"n",text:String(n)}));
+    box.append(b);
+  }
+  for(const n of state.extra){
+    box.append(el("button",{class:"chip extra",title:"Remove from filter",onclick:()=>{state.extra.delete(n);refresh(true)}},"+ "+n+" ×"));
+  }
+}
+function progress(){
+  // Total comes from the kind counts, not from the pages loaded so far.
+  const n=known.size,t=Object.values(KINDS).reduce((a,v)=>a+v.count,0);
+  $("#prog").textContent=`${n} / ${t} known`;
+  $("#meter").style.width=(t?n/t*100:0)+"%";
+}
+function factsList(c){
+  // Zero-width space after dots so long package names wrap at a dot instead of mid-word.
+  const wrap=s=>s.replace(/\.(?=[a-z])/g,".​");
+  return el("ul",{class:"facts"},c.f.map(f=>f.startsWith("!")?el("li",{class:"trap",text:wrap(f.slice(1))}):el("li",{text:wrap(f)})));
+}
+// c.t is one table {cap,h,r} or a list of them.
+function miniTable(c){
+  if(!c.t)return null;
+  return [].concat(c.t).map(t=>el("div",{class:"tbl"},el("table",{},
+    el("caption",{text:t.cap}),
+    el("thead",{},el("tr",{},...t.h.map(h=>el("th",{scope:"col",text:h})))),
+    el("tbody",{},...t.r.map(r=>el("tr",{},el("th",{scope:"row",text:r[0]}),...r.slice(1).map(v=>el("td",{class:v==="Yes"?"yes":v==="No"?"no":"",text:v}))))))));
+}
+function markBtn(c,after){
+  const b=el("button",{class:"mark","aria-pressed":String(known.has(c.n)),text:known.has(c.n)?"Known ✓":"Mark known"});
+  b.addEventListener("click",e=>{e.stopPropagation();known.has(c.n)?known.delete(c.n):known.add(c.n);saveKnown();after()});
+  return b;
+}
+
+function cardEl(c){
+  return el("article",{class:"card"+(known.has(c.n)?" known":"")+(c.dep?" deprecated":""),"data-n":c.n,style:`--cc:${catVar(c.c)}`},
+    el("div",{class:"meta"},el("span",{class:"cat",text:CATS[c.c].name}),markBtn(c,()=>{progress();renderOverview()})),
+    el("h3",{text:c.n}),tags(c),el("p",{class:"def",text:c.d}),depNote(c),factsList(c),miniTable(c),c.x?el("pre",{text:c.x}):null,relNote(c),srcLink(c));
+}
+// A sentinel after the grid is observed with a generous margin, so the next page is
+// requested long before the user can reach the end of the loaded content.
+let moreObserver=null;
+function initMoreObserver(){
+  if(moreObserver)return;
+  moreObserver=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))loadMore()},
+    {root:null,rootMargin:PREFETCH_MARGIN,threshold:0});
+}
+function updateMore(){
+  const s=$("#more");if(!s)return;
+  if(!cardHasMore){moreObserver?.unobserve(s);s.hidden=true;return}
+  s.hidden=false;
+  s.textContent=cardLoading?"Loading more cards…":(vlist.length?"":"Looking for matches…");
+}
+function watchMore(){
+  const s=$("#more");if(!s)return;
+  initMoreObserver();moreObserver.observe(s);
+}
+
+// Windowed rendering. The spacer keeps the document height; only nearby rows are in the DOM.
+// Cards have different heights, so each height is measured once and cached for the current width.
+const V_GAP=14,V_MIN_COL=340,V_TOP=18,V_OVERSCAN=800,V_EST=420;
+let vGrid=null,vlist=[],vCols=1,vColW=V_MIN_COL,vRows=[],vCardRow=new Map(),vCardCol=new Map();
+let vHeights=new Map(),vNodes=new Map(),vRaf=0;
+const vResize=new ResizeObserver(es=>{
+  let changed=false;
+  for(const e of es){
+    const name=e.target.dataset.n;if(!name)continue;
+    const h=Math.round(e.target.offsetHeight);
+    if(Math.abs((vHeights.get(name)??h)-h)>1){vHeights.set(name,h);changed=true}
+  }
+  if(changed&&vGrid){layoutVirtual();scheduleVirtual()}
+});
+function clearVirtual(){
+  vResize.disconnect();moreObserver?.disconnect();
+  vGrid=null;vNodes.clear();vCardRow.clear();vCardCol.clear();
+}
+function measureColumns(){
+  if(!vGrid)return;
+  const w=vGrid.clientWidth||340;
+  const cols=Math.max(1,Math.floor((w+V_GAP)/(V_MIN_COL+V_GAP)));
+  const colW=(w-(cols-1)*V_GAP)/cols;
+  if(cols!==vCols||Math.abs(colW-vColW)>1){
+    vCols=cols;vColW=colW;vHeights.clear();
+    for(const node of vNodes.values())node.style.width=colW+"px";
+  }
+}
+function heightOf(c){return vHeights.get(c.n)??V_EST}
+function layoutVirtual(){
+  if(!vGrid||!vlist.length){
+    vRows=[];vCardRow.clear();vCardCol.clear();
+    if(vGrid)vGrid.style.height="0px";
+    return;
+  }
+  measureColumns();
+  vRows=[];vCardRow.clear();vCardCol.clear();
+  let top=V_TOP;
+  for(let i=0;i<vlist.length;i+=vCols){
+    const items=[];let h=0;
+    for(let col=0;col<vCols&&i+col<vlist.length;col++){
+      const c=vlist[i+col];items.push({c,col});h=Math.max(h,heightOf(c));
+    }
+    vRows.push({top,height:h,items});
+    for(const it of items){vCardRow.set(it.c.n,vRows.length-1);vCardCol.set(it.c.n,it.col)}
+    top+=h+V_GAP;
+  }
+  vGrid.style.height=(top-V_GAP)+"px";
+}
+function visibleRowRange(){
+  if(!vGrid||!vRows.length)return [0,0];
+  const seen=-vGrid.getBoundingClientRect().top;
+  let from=vRows.length;
+  for(let i=0;i<vRows.length;i++)if(vRows[i].top+vRows[i].height>seen-V_OVERSCAN){from=i;break}
+  let to=from;
+  for(let i=from;i<vRows.length;i++){
+    if(vRows[i].top>seen+innerHeight+V_OVERSCAN)break;
+    to=i+1;
+  }
+  return [from,to];
+}
+function renderVirtual(){
+  if(!vGrid||!vRows.length){
+    for(const node of vNodes.values())node.remove();
+    vNodes.clear();return;
+  }
+  const needed=new Set();
+  for(let pass=0;pass<4;pass++){
+    const [from,to]=visibleRowRange();
+    needed.clear();
+    let changed=false;
+    for(let r=from;r<to;r++)for(const {c} of vRows[r].items){
+      needed.add(c.n);
+      let node=vNodes.get(c.n);
+      if(!node){
+        node=cardEl(c);node.style.width=vColW+"px";node.style.top="0px";
+        vGrid.append(node);vNodes.set(c.n,node);vResize.observe(node);
+      }
+      if(!vHeights.has(c.n)){vHeights.set(c.n,Math.round(node.offsetHeight));changed=true}
+    }
+    if(!changed)break;
+    layoutVirtual();
+  }
+  for(const [name,node] of vNodes)if(!needed.has(name)){vResize.unobserve(node);node.remove();vNodes.delete(name)}
+  for(const [name,node] of vNodes){
+    const r=vCardRow.get(name),col=vCardCol.get(name);if(r==null)continue;
+    node.style.width=vColW+"px";
+    node.style.left=(col*(vColW+V_GAP))+"px";
+    node.style.top=vRows[r].top+"px";
+  }
+}
+function scheduleVirtual(){
+  if(vRaf)return;
+  vRaf=requestAnimationFrame(()=>{vRaf=0;renderVirtual()});
+}
+function setVirtualList(list,grid){
+  if(vGrid!==grid){vResize.disconnect();vNodes.clear();vGrid=grid}
+  vlist=list;
+  if(!vGrid)return;
+  layoutVirtual();renderVirtual();
+}
+async function scrollToCard(name){
+  if(!vGrid)return null;
+  const r=vCardRow.get(name);if(r==null)return null;
+  const docTop=window.scrollY+vGrid.getBoundingClientRect().top;
+  const row=vRows[r];
+  const y=docTop+row.top-Math.max(80,(innerHeight-row.height)/2);
+  window.scrollTo({top:Math.max(0,y),behavior:"auto"});
+  renderVirtual();
+  return vNodes.get(name)||null;
+}
+window.addEventListener("scroll",scheduleVirtual,{passive:true});
+window.addEventListener("resize",()=>{if(!vGrid)return;measureColumns();layoutVirtual();scheduleVirtual()},{passive:true});
+document.fonts?.ready.then(()=>{if(vGrid){vHeights.clear();layoutVirtual();scheduleVirtual()}});
+
+function renderOverview(){
+  const list=filtered();const v=$("#view");
+  moreObserver?.disconnect();
+  v.replaceChildren();
+  if(!list.length&&!cardHasMore){clearVirtual();noMatchMessage();return}
+  const g=el("div",{class:"vgrid"});
+  const more=el("div",{id:"more",class:"more","aria-live":"polite"});
+  v.append(g,more);
+  setVirtualList(list,g);
+  watchMore();updateMore();
+  if(list.length<8)fillVisible();
+}
+// New pages update the virtual list. The DOM keeps only the cards near the viewport.
+function appendLoaded(){
+  const g=$("#view .vgrid");if(!g){renderOverview();return}
+  setVirtualList(filtered(),g);
+  updateMore();
+}
+
+function buildDeck(shuffle){
+  state.deck=filtered();
+  if(shuffle)for(let i=state.deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[state.deck[i],state.deck[j]]=[state.deck[j],state.deck[i]]}
+  state.idx=0;state.flipped=false;
+}
+function renderStudy(){
+  clearVirtual();
+  const v=$("#view");v.replaceChildren();
+  const d=state.deck;
+  if(!d.length){v.append(el("div",{class:"study"},el("p",{class:"empty",text:"Nothing left in this deck. Untick “Hide known” or choose another section."}),el("button",{class:"btn primary",text:"Restart deck",onclick:()=>{buildDeck(true);renderStudy()}})));return}
+  if(state.idx>=d.length){v.append(el("div",{class:"study"},el("p",{class:"empty",text:`Deck finished: ${d.filter(c=>known.has(c.n)).length} of ${d.length} marked known.`}),el("button",{class:"btn primary",text:"Shuffle and go again",onclick:()=>{buildDeck(true);renderStudy()}})));return}
+  const c=d[state.idx];
+  const flip=el("div",{class:"flip"+(state.flipped?" flipped":""),tabindex:"0",role:"button","aria-label":"Flip card",style:`--cc:${catVar(c.c)}`,
+    onclick:()=>{state.flipped=!state.flipped;flip.classList.toggle("flipped",state.flipped)},
+    onkeydown:e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();flip.click()}}},
+    el("div",{class:"flip-inner"},
+      el("div",{class:"face front"},el("span",{class:"cat",text:CATS[c.c].name}),el("div",{class:"q",text:c.n}),el("div",{class:"hint",text:KINDS[c.k].hint})),
+      el("div",{class:"face back"+(c.dep?" deprecated":"")},el("div",{class:"meta"},el("span",{class:"cat",text:CATS[c.c].name}),el("span",{class:"kbd",text:`${state.idx+1} / ${d.length}`})),
+        el("h3",{text:c.n,style:"font-family:var(--mono);margin:0"}),tags(c),el("p",{class:"def",text:c.d}),depNote(c),factsList(c),miniTable(c),c.x?el("pre",{text:c.x}):null,relNote(c),srcLink(c))));
+  const next=(isKnown)=>{if(isKnown===true)known.add(c.n);if(isKnown===false)known.delete(c.n);saveKnown();progress();state.idx++;state.flipped=false;renderStudy()};
+  v.append(el("div",{class:"study"},
+    el("span",{class:"kbd",text:`Card ${state.idx+1} of ${d.length}`}),flip,
+    el("div",{class:"ctrls"},
+      el("button",{class:"btn",text:"← Back",onclick:()=>{if(state.idx>0){state.idx--;state.flipped=false;renderStudy()}}}),
+      el("button",{class:"btn again",text:"Again",onclick:()=>next(false)}),
+      el("button",{class:"btn primary",text:"Got it",onclick:()=>next(true)}),
+      el("button",{class:"btn",text:"Shuffle",onclick:()=>{buildDeck(true);renderStudy()}})),
+    el("span",{class:"kbd",text:"Keys: Space flip · → got it · ← again"})));
+}
+
+function refresh(rebuild){
+  chips();progress();
+  if(state.mode==="overview")renderOverview();
+  else{if(rebuild)buildDeck(true);renderStudy()}
+}
+async function setMode(m){
+  state.mode=m;$("#m-overview").setAttribute("aria-pressed",m==="overview");$("#m-study").setAttribute("aria-pressed",m==="study");
+  if(m==="study"){
+    // Study mode shuffles the whole deck, so load the remaining pages first (in the background).
+    clearVirtual();
+    $("#view").replaceChildren(el("p",{class:"empty",text:"Loading study deck…"}));
+    try{await ensureAllCards()}catch(e){console.error(e)}
+  }
+  refresh(true);
+}
+// Color theme: Meiyu (default) or Spring, kept in this browser.
+const BRAND_LS="spring2v0-brand";
+function setBrand(b){
+  if(b!=="spring")b="meiyu";
+  if(b==="spring")document.documentElement.dataset.brand=b;else delete document.documentElement.dataset.brand;
+  for(const btn of document.querySelectorAll("button[data-brand]"))btn.setAttribute("aria-pressed",btn.dataset.brand===b);
+  try{localStorage.setItem(BRAND_LS,b)}catch(e){}
+}
+for(const btn of document.querySelectorAll("button[data-brand]"))btn.onclick=()=>setBrand(btn.dataset.brand);
+try{setBrand(localStorage.getItem(BRAND_LS))}catch(e){setBrand("meiyu")}
+$("#m-overview").onclick=()=>setMode("overview");
+$("#m-study").onclick=()=>setMode("study");
+$("#q").addEventListener("input",e=>{state.q=e.target.value;refresh(true)});
+$("#hideKnown").addEventListener("change",e=>{state.hideKnown=e.target.checked;refresh(true)});
+$("#hideOffExam").addEventListener("change",e=>{state.hideOffExam=e.target.checked;refresh(true)});
+document.addEventListener("keydown",e=>{
+  if(state.mode!=="study"||e.target.matches("input"))return;
+  const f=document.querySelector(".flip");if(!f)return;
+  if(e.key===" "&&e.target===document.body){e.preventDefault();f.click()}
+  if(e.key==="ArrowRight")document.querySelector(".btn.primary")?.click();
+  if(e.key==="ArrowLeft")document.querySelector(".btn.again")?.click();
+});
+async function loadAbout(){
+  try{
+    const a=await getJson("/about");
+    const badge=$("#version-badge");if(!badge)return;
+    const date=a.buildTime?" · "+a.buildTime.slice(0,10):"";
+    badge.textContent="v"+(a.version||"unknown")+date;
+    badge.title=a.buildTime?"Built "+a.buildTime:"Build time unavailable";
+    badge.hidden=false;
+  }catch(e){console.warn("Could not load app version",e)}
+}
+async function init(){
+  loadAbout();
+  $("#view").replaceChildren(el("p",{class:"empty",text:"Loading cards…"}));
+  try{await loadData()}
+  catch(e){console.error(e);$("#view").replaceChildren(el("p",{class:"empty",text:"Could not load the cards from the server ("+e.message+"). Reload the page to try again."}));return}
+  refresh(true);
+}
+init();
+</script>
+
+</body></html>

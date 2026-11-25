@@ -1,0 +1,73 @@
+[tools]
+devcontainer-cli = "0.90.0"
+java="21"
+node="v24.21.0"
+
+[env]
+DEV_CONTAINER_NAME = "dev-meiyu-training"
+MISE_SESSION="boot"
+
+[tasks.shell]
+description = "Checks if dev container is running and connects to shell"
+quiet = true
+run = """
+if [ -z "$(docker ps -q -f name=^/${DEV_CONTAINER_NAME}$)" ]; then
+    echo "Starting '$DEV_CONTAINER_NAME'..."
+    docker start "$DEV_CONTAINER_NAME" > /dev/null
+fi
+echo "Connecting to shell..."
+docker exec -it "$DEV_CONTAINER_NAME" bash
+"""
+
+[tasks."boot:startWithJMX"]
+description = "Enable JMX Remote console by setting JAVA_OPTS env"
+run="""
+# It is passed to the forked app JVM via -PjvmArgs (see bootRun in build.gradle).
+JMX_OPTS="-Dcom.sun.management.jmxremote \
+-Dcom.sun.management.jmxremote.port=9010 \
+-Dcom.sun.management.jmxremote.rmi.port=9010 \
+-Dcom.sun.management.jmxremote.local.only=false \
+-Dcom.sun.management.jmxremote.authenticate=false \
+-Dcom.sun.management.jmxremote.ssl=false \
+-Djava.rmi.server.hostname=127.0.0.1"
+
+tmux new -d -s "${MISE_SESSION}" -- ./gradlew bootRun -PjvmArgs="$JMX_OPTS"
+tmux ls
+# Check if port used
+# ss -tlnp | grep 9010
+"""
+
+[tasks."boot:debug"]
+run="""
+# It is passed to the forked app JVM via -PjvmArgs (see bootRun in build.gradle).
+JVM_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:9010"
+tmux new -d -s "${MISE_SESSION}" -- ./gradlew bootRun -PjvmArgs="$JVM_OPTS"
+tmux ls
+"""
+
+[tasks."boot:start"]
+description = "Creates a tmux session to start bootRun"
+run= """
+    JVM_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:9010"
+    tmux new -d -s "${MISE_SESSION}" -- ./gradlew bootRun -PjvmArgs="$JVM_OPTS"
+    tmux ls
+"""
+
+[tasks."boot:pane"]
+description = "Show the session pane"
+run= """
+    tmux capture-pane -p -t "${MISE_SESSION}"
+"""
+
+[tasks."boot:stop"]
+description = "Kills thetmux session to stop bootRun"
+run= """
+    tmux kill-session -t "${MISE_SESSION}"
+"""
+
+[tasks."boot:restart"]
+description = "Kills thetmux session to stop bootRun"
+run= """
+    mise run boot:stop
+    mise run boot:start
+"""

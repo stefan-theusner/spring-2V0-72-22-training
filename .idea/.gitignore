@@ -1,0 +1,16 @@
+# User-specific state
+/workspace.xml
+/usage.statistics.xml
+/shelf/
+/dataSources/
+/dataSources.local.xml
+/dataSources.ids
+/datasources.xml
+/dataSources.xml
+
+# Generated on Gradle import
+/gradle.xml
+/modules/
+*.iml
+/libraries/
+/dictionaries/

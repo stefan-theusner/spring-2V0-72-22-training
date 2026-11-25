@@ -1,0 +1,67 @@
+/* Floci Cognito hosted login, themed with the meiyu.eu brand palette (logo marks). */
+:root {
+  --orange: #E87D33; --red: #DC3A4C; --purple: #8C4091;
+  --bg: #f6f5f7; --card: #fff; --text: #111; --muted: #646970;
+  --border: #dcdcde; --accent: var(--purple); --accent-hover: #74337a;
+  --ring: rgba(140, 64, 145, .25); --danger: #b8283a; --danger-bg: #fdf0f1;
+  --on-accent: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101517; --card: #1b1f22; --text: #f1f1f1; --muted: #a7aaad;
+    --border: #32373c; --accent: #a456aa; --accent-hover: #b86dbe;
+    --ring: rgba(184, 109, 190, .35); --danger: #f08a97; --danger-bg: #2c1519;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; display: grid; place-items: center; padding: 16px;
+  background: var(--bg); color: var(--text);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+main {
+  position: relative; overflow: hidden;
+  width: 100%; max-width: 380px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 40px 32px 32px; box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+/* brand stripe across the top of the card */
+main::after {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--red), var(--orange));
+}
+/* meiyu logo mark */
+main::before {
+  content: ""; display: block; width: 48px; height: 28px; margin-bottom: 20px; margin-left: 270px;
+  background: no-repeat left center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 7 48 28'%3E%3Cpath d='M33.1747 33.6687C32.1486 33.6687 31.1071 33.3901 30.1743 32.8019C27.5315 31.161 26.7232 27.709 28.3866 25.0929L36.9367 11.6563C38.6001 9.04025 42.0979 8.25077 44.7407 9.89164C47.3835 11.5325 48.1919 14.9845 46.5285 17.6006L37.9783 31.0372C36.9057 32.7245 35.0557 33.6533 33.1747 33.6533' fill='%23E87D33'/%3E%3Cpath d='M16.7118 33.6687C15.6857 33.6687 14.6442 33.3901 13.7114 32.8019C11.0686 31.161 10.2603 27.709 11.9237 25.0929L20.4739 11.6563C22.1373 9.04025 25.6351 8.25077 28.2778 9.89164C30.9206 11.5325 31.729 14.9845 30.0656 17.6006L21.5154 31.0372C20.4428 32.7245 18.5928 33.6533 16.7118 33.6533' fill='%23DC3A4C'/%3E%3Cpath d='M5.65865 25.1548C4.63262 25.1548 3.59106 24.8762 2.65831 24.2879C-2.26107e-05 22.6471 -0.792858 19.195 0.870542 16.5789L3.99525 11.6718C5.65865 9.05573 9.15645 8.26625 11.7992 9.90712C14.442 11.548 15.2504 15 13.587 17.6161L10.4623 22.5232C9.38964 24.2105 7.53969 25.1393 5.65865 25.1393' fill='%238C4091'/%3E%3C/svg%3E");
+}
+h1 {
+    position: absolute;
+    left: 32px;
+    top: 38px;
+    margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -.01em;
+}
+
+form { display: flex; flex-direction: column; margin-top: 24px; }
+label { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+input[type=text], input[type=password], input[type=email] {
+  width: 100%; margin-bottom: 18px; padding: 10px 12px;
+  font: inherit; color: var(--text); background: var(--card);
+  border: 1px solid var(--border); border-radius: 8px; outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+button {
+  margin-top: 6px; padding: 11px 14px; font: inherit; font-weight: 600;
+  color: var(--on-accent); background: var(--accent); border: 0; border-radius: 8px;
+  cursor: pointer; transition: background .15s;
+}
+button:hover { background: var(--accent-hover); }
+button:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+/* error messages, whatever markup Floci uses */
+main > p, [role=alert], .error, .alert {
+  margin: 16px 0 0; padding: 10px 12px; font-size: 14px;
+  color: var(--danger); background: var(--danger-bg);
+  border-left: 3px solid var(--red); border-radius: 6px;
+}
