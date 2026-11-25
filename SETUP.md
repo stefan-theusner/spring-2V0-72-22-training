@@ -58,12 +58,42 @@ pulumi up
 
 #### Linux hosts
 
-`host.docker.internal` and the `/Users` share are Docker Desktop features. Before `pulumi up`, set the Pulumi config value `hostAlias` (address under which containers reach the host) and, if needed, `keysDir` (absolute path of `keys/`, must match `${PWD}/keys` from step 3):
+Docker Desktop provides `host.docker.internal` and shares `/Users` with its VM. Docker Engine on Linux does not provide them. This section applies to Docker Engine. If you use Docker Desktop, skip this section.
+
+`hostAlias` is the address that the ECS task uses to reach services on the host. These services are Floci on port `4566`, Postgres on port `7001` and the OTel collector on port `4318`. The default value is `host.docker.internal`. That name does not work in a Floci task on Docker Engine.
+
+1. Start the stack as described in step 3. Run `docker compose up -d` from the repository root.
+2. Run `pulumi up` as described in step 5.
+3. Verify the ECS app:
+
+   ```bash
+   curl -fsS http://localhost:8081/actuator/health | jq
+   ```
+
+   If the app reports `UP`, skip the rest of this section.
+
+If the ECS task cannot reach the host services, set `hostAlias`. Find the address that containers use to reach the host:
 
 ```bash
-pulumi config set hostAlias <host-ip>
-pulumi config set keysDir "$(cd .. && pwd)/keys"
+docker network inspect bridge --format '{{(index .IPAM.Config 0).Gateway}}'
 ```
+
+The command prints a gateway address, for example `172.17.0.1`. Set that address in the `dev` stack. Run these commands in `iac/`:
+
+```bash
+export PULUMI_CONFIG_PASSPHRASE=""
+pulumi config set hostAlias <gateway-ip>
+pulumi up
+```
+
+`keysDir` is the absolute host path of `keys/`. Floci allows ECS mounts only under the path that Compose used in step 3 (`${PWD}/keys`). By default, Pulumi computes `<repo>/keys`. This value matches `${PWD}/keys` when you start Compose from the repository root. Set `keysDir` only when the keys mount fails:
+
+```bash
+pulumi config set keysDir "$(cd .. && pwd)/keys"
+pulumi up
+```
+
+Run the `keysDir` command in `iac/`. The `cd ..` part refers to the repository root. Each `pulumi config set` command writes the value to [Pulumi.dev.yaml](iac/Pulumi.dev.yaml).
 
 **6. Update the app config with the generated values.** The IDs committed in [application-security.properties](src/main/resources/application-security.properties) and the port in [application-jpa.properties](src/main/resources/application-jpa.properties) are only examples from an earlier stack: a fresh `pulumi up` creates a new user pool, client and possibly another Postgres port. Still in `iac/`:
 
