@@ -3,7 +3,7 @@
 Spring Boot 4.1 / Java 21 training app (Spring Professional 2V0-72.22 practice), backed by a local AWS emulator (Floci).
 
 ## Layout
-- `src/main/java/eu/meiyu/training/` – `controller`, `service`, `repository`, `entity` (`Department`, `Card`), `dto`, `config` (+ `config/security`), `security`, `aop`, `actuator`, `bean`, `excpetion` (sic)
+- `src/main/java/eu/meiyu/training/` – `feature/<name>/` (`card`, `department`, `about`, `sample`; each with its own controller plus `entity`, `repository`, `service`, `dto` as needed; `department/entity/excpetion` (sic)), shared `controller`, `dto`, `config` (+ `config/security`), `security`, `aop`, `actuator`
 - `src/main/resources/application-*.properties` – one file per profile; `prod` group (default) = `config,monitoring,logging,jpa,security,otel`
 - `src/test/java/...` – JUnit/MockMvc tests; `WithoutOAuth2Application` boots the app without OAuth2 auto-config
 - `karate/` – API and load tests (`base_url` in `karate/env.yaml`)
@@ -15,7 +15,7 @@ Spring Boot 4.1 / Java 21 training app (Spring Professional 2V0-72.22 practice),
 ## Commands
 - Build/test: `./gradlew build`, `./gradlew test`
 - Run: `./gradlew bootRun` (or `mise run boot:start` / `boot:stop`, runs in tmux)
-- Container image: `./gradlew bootBuildImage` → `<group with dashes>/training-app:<version>` from `gradle.properties` (e.g. `eu-meiyu/training-app:0.1.0`); `iac/index.ts` derives the same name
+- Container image: `./gradlew bootBuildImage` → `<group>/training-app:<version>` from `gradle.properties` (`group=eu-meiyu`); `iac/index.ts` derives the same name
 - Infra: `cd iac && PULUMI_CONFIG_PASSPHRASE="" pulumi up` (local backend, `pulumi login --local`)
 - Karate: `cd karate && karate run <file>.feature`
 
