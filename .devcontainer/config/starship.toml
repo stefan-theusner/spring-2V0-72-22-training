@@ -9,12 +9,10 @@ $username\
 $hostname\
 [ ](fg:color_bg1 bg:color_bg2)\
 $directory\
-[ ](fg:color_bg2 bg:color_bg5)\
-$cmd_duration\
-[ ](fg:color_bg5)\
-$fill\
-(\
-[\ue0b6](fg:color_bg4)\
+[ ](fg:color_bg2 bg:color_bg3)\
+$git_branch\
+$git_status\
+[ ](fg:color_bg3 bg:color_bg4)\
 $c\
 $dotnet\
 ${custom.java}\
@@ -22,16 +20,9 @@ $python\
 $rust\
 $kotlin\
 $nodejs\
-[\ue0b4](fg:color_bg4)\
-)\
-$fill\
-(\
-[\ue0b6](fg:color_bg3)\
-$git_branch\
-$git_status\
-[ ](bg:color_bg3)\
-[\ue0b4](fg:color_bg3)\
-)\
+[ ](fg:color_bg4 bg:color_bg5)\
+$cmd_duration\
+[ ](fg:color_bg5)\
 \n$character\
 """
 
