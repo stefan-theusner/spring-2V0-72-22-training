@@ -23,6 +23,10 @@ $nodejs\
 [ ](fg:color_bg4 bg:color_bg5)\
 $cmd_duration\
 [ ](fg:color_bg5)\
+$fill\
+[\ue0b6](fg:color_bg5)\
+$time\
+[\ue0b4](fg:color_bg5)\
 \n$character\
 """
 
@@ -88,6 +92,12 @@ style = "bg:color_bg1 fg:color_white"
 format = "[$symbol]($style)"
 style = "bg:color_bg1 fg:color_white"
 disabled = false
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "bg:color_bg5 fg:color_gray"
+format = "[ $time ]($style)"
 
 [username]
 disabled = false
