@@ -2,7 +2,10 @@
 {
     "name": "${localWorkspaceFolderBasename}",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
     "workspaceFolder": "/home/vscode/${localWorkspaceFolderBasename}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+
     "runArgs": [
         "--name",
         "dev-meiyu-${localWorkspaceFolderBasename}",

@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "=== Dev container start script started ==="
+echo """######################################################
+### About to execute dev container start script    ###
+######################################################"""
 
 ####################################################################################
 ### Host port relay (Claude Code + opencode)
@@ -17,4 +19,6 @@ done
 
 bash "$RELAY_SCRIPT"
 
-echo "=== Dev container start script completed ==="
+echo """######################################################
+### Dev container start script completed           ###
+######################################################"""

@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "=== Dev container setup started ==="
+echo """######################################################
+### About to start dev container post create       ###
+######################################################"""
 
 # Config files shipped with the project (.devcontainer/config)
 CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)/config"
@@ -72,4 +74,6 @@ if ! command -v gost >/dev/null; then
         | sudo tar -xz -C /usr/local/bin gost
 fi
 
-echo "=== Dev container setup completed ==="
+echo """######################################################
+### Dev container post create completed            ###
+######################################################"""

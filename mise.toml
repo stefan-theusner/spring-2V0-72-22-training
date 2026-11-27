@@ -1,22 +1,21 @@
 [tools]
 java="21"
 node="v24.21.0"
+devcontainer-cli="0.91.0"
 
 [env]
-DEV_CONTAINER_NAME = "dev-meiyu-training"
 MISE_SESSION="boot"
 
-[tasks.shell]
-description = "Checks if dev container is running and connects to shell"
+[tasks."dc:shell"]
+description = "Devcontainer bash"
 quiet = true
-run = """
-if [ -z "$(docker ps -q -f name=^/${DEV_CONTAINER_NAME}$)" ]; then
-    echo "Starting '$DEV_CONTAINER_NAME'..."
-    docker start "$DEV_CONTAINER_NAME" > /dev/null
-fi
-echo "Connecting to shell..."
-docker exec -it "$DEV_CONTAINER_NAME" bash
-"""
+run = "devcontainer exec --workspace-folder . bash"
+
+[tasks."dc:up"]
+description = "Create / re-create devcontainer"
+run = "devcontainer up --workspace-folder . --remove-existing-container"
+
+### Container Tasks ###
 
 [tasks."boot:startWithJMX"]
 description = "Enable JMX Remote console by setting JAVA_OPTS env"
